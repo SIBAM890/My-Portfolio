@@ -2,7 +2,7 @@ services:
   - type: web
     name: sibam-portfolio
     env: static
-    buildCommand: ""
+    buildCommand: echo "Static site - no build needed"
     staticPublishPath: .
     pullRequestPreviewsEnabled: true
     headers:
@@ -18,15 +18,6 @@ services:
       - path: /*
         name: Cache-Control
         value: public, max-age=3600
-      - path: /Sibam.png
-        name: Cache-Control
-        value: public, max-age=86400
-      - path: /neo-styles.css
-        name: Cache-Control
-        value: public, max-age=86400
-      - path: /script.js
-        name: Cache-Control
-        value: public, max-age=86400
     routes:
       - type: rewrite
         source: /*
